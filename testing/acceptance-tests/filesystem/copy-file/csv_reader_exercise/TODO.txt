@@ -1,0 +1,14 @@
+Exercise: Persistent Fixture - Copy File
+-------------------------------------------------------------------------------
+
+In "test_csv_reader.py", implement the missing Setup and Teardown:
+
+A) Setup
+	Create a directoty "test_data" in the current working directory.
+	Copy the "data/data.csv" file into the new "test_data" folder and 
+	rename it to "order.csv".
+	Create an instance of "CsvDataReader".
+
+B) Teardown
+	Remove the "order.csv" file and its "test_data" folder. 
+

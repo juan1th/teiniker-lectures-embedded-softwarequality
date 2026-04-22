@@ -4,6 +4,7 @@
 
 ```Bash
 $ curl -i http://localhost:8080
+
 HTTP/1.1 200 
 Vary: Origin
 Vary: Access-Control-Request-Method
@@ -94,3 +95,4 @@ Date: Wed, 14 May 2025 08:12:29 GMT
 </html>
 ```
 
+*Egon Teiniker, 2020-2026, GPL v3.0*

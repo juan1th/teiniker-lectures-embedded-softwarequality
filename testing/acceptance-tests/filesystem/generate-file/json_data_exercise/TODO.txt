@@ -1,0 +1,19 @@
+Exercise: Persistent Fixture (JSON File)
+-------------------------------------------------------------------------------
+
+Given the test cases written in "test_json_data.py", implement the missing 
+setup and teardown code.
+
+A) Setup
+    Create a JSON file with the name "data.json" which contains the following data 
+    structure:
+        'person': {
+            'name': 'John', 
+            'age': 30, 
+            'city': 'Graz'
+        }
+
+B) Teardown
+    Remove the file "data.json" from the filesystem.
+    Tip: Use os.remove()
+
