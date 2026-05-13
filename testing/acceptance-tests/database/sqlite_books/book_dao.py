@@ -25,16 +25,16 @@ class BookDao:
     def __init__(self, dbc):
         self.conn = dbc
 
-    def insert(self, book):
+    def insert(self, book:Book) -> None:
         sql = "INSERT INTO book (isbn, title, authors, publisher, year) VALUES (?,?,?,?,?)"
         parameters = (book.isbn, book.title, book.authors, book.publisher, book.year)
         try:
             cur = self.conn.cursor()
             cur.execute(sql, parameters)
         except Warning as ex:
-            raise DataAccessError("Can't insert book: " + book) from ex
+            raise DataAccessError("Can't insert book: " + str(book)) from ex
 
-    def find_by_isbn(self, isbn):
+    def find_by_isbn(self, isbn:str) -> Book:
         sql = "SELECT * FROM book WHERE isbn=?"
         parameters = (isbn,)
         try:
@@ -43,7 +43,7 @@ class BookDao:
             row = cur.fetchone()
             return Book(row[0], row[1], row[2], row[3], row[4])
         except Warning as ex:
-            raise DataAccessError("Can't find book with given isbn: " + id) from ex
+            raise DataAccessError("Can't find book with given isbn: " + isbn) from ex
 
     def find_all(self):
         sql = "SELECT * FROM book"
