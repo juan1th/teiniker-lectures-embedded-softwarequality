@@ -1,13 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-
 class TestTranslator:
-
-    def setup_method(self):
+    def setup_class(self):
         self.driver = webdriver.Firefox()
 
-    def teardown_method(self):
+    def teardown_class(self):
         self.driver.quit()
 
     def test_cat_german(self):
@@ -19,6 +17,15 @@ class TestTranslator:
         self.driver.find_element(By.CSS_SELECTOR, "th:nth-child(3) > input").click()
         assert self.driver.find_element(By.CSS_SELECTOR, "p:nth-child(1)").text == "Translate: cat into Katze"
         self.driver.find_element(By.LINK_TEXT, "back").click()
+    
+    def test_translatecatintodeutsch(self):
+        self.driver.get("http://localhost:8080/index.html")
+        self.driver.set_window_size(1051, 845)
+        self.driver.find_element(By.NAME, "word").click()
+        self.driver.find_element(By.NAME, "word").send_keys("cat")
+        self.driver.find_element(By.CSS_SELECTOR, "th:nth-child(3) > input").click()
+        self.driver.find_element(By.LINK_TEXT, "back").click()
+    
 
     def test_cat_french(self):
         self.driver.get("http://localhost:8080")
