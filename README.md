@@ -14,18 +14,22 @@ The following topics will be covered:
     * [Configuration Management](https://github.com/teiniker/teiniker-lectures-python/tree/main/configuration-management)
 
 2. **Software Inspection**
-    * [Introduction](inspection)
+    - [Introduction](inspection)
+    - [Software Metrics](inspection/software-metrics/)
+    - [Type Hints](inspection/type-hints/)
+    - [Static Analysis](inspection/static-analysis/)
 
 3. **Software Testing**
     * [Introduction](testing/README.md)
     * [Unit Tests](testing/unit-tests/)
     * [Acceptance Tests](testing/acceptance-tests/)
 
-
 4. **Software Security**
+    - [Secure Coding](security/secure-coding/)
+    - [Cryptography](security/cryptography/)
+    - [Reverse Engineering](security/reverse-engineering/cxx/)
 
-
-As a development environment, you can use a pre-configured **Debian 12.7 Linux VM**
+As a development environment, you can use a pre-configured **Debian 13.0 Linux VM**
 image:
 [Virtual Lab](https://drive.google.com/drive/folders/1AzsF4Mvh1HJ8k6OW5W5hQ5CF0HdqA51l)
 
